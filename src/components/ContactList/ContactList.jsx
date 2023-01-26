@@ -7,14 +7,19 @@ import Notification from 'components/Notification/Notification';
 
 import styles from './ContactList.module.css';
 import Loader from 'components/Loader/Loader';
-// import { deleteContact, requestContacts } from 'redux/contactsSlice';
+import {
+  selectContacts,
+  selectError,
+  selectFilter,
+  selectIsLoading,
+} from 'redux/selectors';
 
 const ContactList = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
-  const isLoading = useSelector(state => state.contacts.isLoading);
-  const error = useSelector(state => state.contacts.error);
-  const filter = useSelector(state => state.filter);
+  const contacts = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+  const filter = useSelector(selectFilter);
 
   useEffect(() => {
     dispatch(fetchContacts());
