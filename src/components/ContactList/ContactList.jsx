@@ -28,7 +28,6 @@ const ContactList = () => {
   const onDeleteContactBtnClick = contactId => {
     const deletedContact = contacts.find(contact => contact.id === contactId);
     Notiflix.Notify.success(`"${deletedContact.name}" successfully deleted`);
-    console.log(isLoading);
     dispatch(delContact(contactId));
   };
 
