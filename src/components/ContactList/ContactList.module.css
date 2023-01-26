@@ -32,6 +32,11 @@
   background-position: right center;
 }
 
+.delBtn:disabled {
+  background-image: none;
+  background-color: rgb(208, 208, 208);
+}
+
 .listItem {
   display: flex;
   flex-wrap: wrap;
