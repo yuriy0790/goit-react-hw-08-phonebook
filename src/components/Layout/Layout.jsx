@@ -2,7 +2,7 @@ import Loader from 'components/Loader/Loader';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
-
+import { Header, NavList, NavListItem } from './Layout.styled';
 const routes = [
   { label: 'Home', path: '/', privatePath: false },
   { label: 'Register', path: '/register', privatePath: false },
@@ -20,22 +20,22 @@ const Layout = () => {
         <Loader />
       ) : (
         <>
-          <header>
+          <Header>
             <div>
               <nav>
-                <ul>
+                <NavList>
                   {routes.map(({ label, path, privatePath }) => {
                     return privatePath === isLoggedIn || path === '/' ? (
-                      <li key={path}>
+                      <NavListItem key={path}>
                         <Link to={path}>{label}</Link>
-                      </li>
+                      </NavListItem>
                     ) : null;
                   })}
-                </ul>
+                </NavList>
               </nav>
             </div>
             {isLoggedIn && <UserMenu />}
-          </header>
+          </Header>
           <main>
             <Outlet />
           </main>

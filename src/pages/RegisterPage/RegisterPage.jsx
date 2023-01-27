@@ -1,13 +1,15 @@
+import { Container } from 'components/Container/Container.styled';
 import RegisterForm from 'components/RegisterForm/RegisterForm';
+import Section from 'components/Section/Section';
 
 const RegisterPage = () => {
   return (
-    <section>
-      <div>
+    <Container>
+      <Section>
         <h1>Register page</h1>
         <RegisterForm />
-      </div>
-    </section>
+      </Section>
+    </Container>
   );
 };
 

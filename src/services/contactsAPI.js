@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'https://63d187a4120b32bbe8fa3e98.mockapi.io/';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export async function getContacts() {
   const { data } = await axios.get(`contacts`);

@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+import {
+  FormLogin,
+  FormLoginInput,
+  FormLoginLabel,
+  GradientButton,
+} from './LoginForm.styled';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -25,20 +31,20 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <FormLogin onSubmit={handleSubmit}>
+      <FormLoginLabel>
         <span>Email</span>
-        <input
+        <FormLoginInput
           type="email"
           name="email"
           required
           value={email}
           onChange={handleChange}
         />
-      </label>
-      <label>
+      </FormLoginLabel>
+      <FormLoginLabel>
         <span>Password</span>
-        <input
+        <FormLoginInput
           type="password"
           name="password"
           minLength={8}
@@ -46,9 +52,9 @@ const LoginForm = () => {
           value={password}
           onChange={handleChange}
         />
-      </label>
-      <button type="submit">LOGIN</button>
-    </form>
+      </FormLoginLabel>
+      <GradientButton type="submit">LOGIN</GradientButton>
+    </FormLogin>
   );
 };
 

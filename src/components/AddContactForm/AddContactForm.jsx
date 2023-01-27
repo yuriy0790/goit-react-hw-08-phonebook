@@ -34,12 +34,12 @@ export default function AddContactForm() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(contacts);
+
     const existingName = contacts.find(
       el => el.name.toLowerCase() === name.toLowerCase()
     );
 
-    const existingNumber = contacts.find(el => el.phone === number);
+    const existingNumber = contacts.find(el => el.number === number);
 
     if (existingName) {
       Notiflix.Notify.failure(`"${name}" is allready in contact list`);
@@ -54,9 +54,8 @@ export default function AddContactForm() {
     }
 
     const contact = {
-      // id: number,
       name: name,
-      phone: number,
+      number: number,
     };
     dispatch(addContact(contact));
 

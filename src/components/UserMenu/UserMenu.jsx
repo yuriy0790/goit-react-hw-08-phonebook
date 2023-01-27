@@ -1,19 +1,30 @@
-import { useDispatch } from 'react-redux';
+import {
+  useDispatch,
+  // useSelector
+} from 'react-redux';
 import { logOut } from 'redux/auth/operations';
+// import { selectUser } from 'redux/auth/selectors';
+import { GradientButton, UserEmail, UserMenuWpar } from './UserMenu.styled';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
+  // const user = useSelector(selectUser);
+
   const handleClick = () => {
     dispatch(logOut());
   };
 
   return (
-    <div>
-      <p>user email</p>
-      <button type="button" onClick={handleClick}>
+    <UserMenuWpar>
+      <UserEmail>
+        user email
+        {/* {user.email} */}
+      </UserEmail>
+
+      <GradientButton type="button" onClick={handleClick}>
         LOG OUT
-      </button>
-    </div>
+      </GradientButton>
+    </UserMenuWpar>
   );
 };
 

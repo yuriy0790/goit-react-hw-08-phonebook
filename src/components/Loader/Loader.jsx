@@ -5,10 +5,10 @@ const Loader = () => {
   return (
     <LoaderWrap>
       <Puff
-        height="50"
-        width="50"
+        height="80"
+        width="80"
         radius={1}
-        color="#f6ff00"
+        color="#0044ff"
         ariaLabel="puff-loading"
         wrapperStyle={{}}
         wrapperClass=""

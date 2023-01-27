@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const LoaderWrap = styled.div`
-  position: sticky;
-  top: 50%;
+  position: absolute;
+  top: 0;
   left: 50%;
 `;

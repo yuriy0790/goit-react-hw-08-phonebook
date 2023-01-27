@@ -54,10 +54,10 @@ const ContactList = () => {
             Found {filteredContacts.length} contacts
           </p>
           <ul>
-            {filteredContacts.map(({ id, name, phone }) => (
+            {filteredContacts.map(({ id, name, number }) => (
               <li className={styles.listItem} key={id}>
                 <p className={styles.contact}>{name}:</p>
-                <p className={styles.contact}>{phone}</p>
+                <p className={styles.contact}>{number}</p>
                 <button
                   className={styles.delBtn}
                   type="button"

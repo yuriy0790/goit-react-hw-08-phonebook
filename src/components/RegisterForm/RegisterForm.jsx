@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import {
+  FormLogin,
+  FormLoginInput,
+  FormLoginLabel,
+  GradientButton,
+} from './RegisterForm.styled';
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
@@ -27,30 +33,30 @@ const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <FormLogin onSubmit={handleSubmit}>
+      <FormLoginLabel>
         <span>Name</span>
-        <input
+        <FormLoginInput
           type="text"
           name="name"
           required
           value={name}
           onChange={handleChange}
         />
-      </label>
-      <label>
+      </FormLoginLabel>
+      <FormLoginLabel>
         <span>Email</span>
-        <input
+        <FormLoginInput
           type="email"
           name="email"
           required
           value={email}
           onChange={handleChange}
         />
-      </label>
-      <label>
+      </FormLoginLabel>
+      <FormLoginLabel>
         <span>Password</span>
-        <input
+        <FormLoginInput
           type="password"
           name="password"
           minLength={8}
@@ -58,9 +64,9 @@ const RegisterForm = () => {
           value={password}
           onChange={handleChange}
         />
-      </label>
-      <button type="submit">REGISTER</button>
-    </form>
+      </FormLoginLabel>
+      <GradientButton type="submit">REGISTER</GradientButton>
+    </FormLogin>
   );
 };
 
